@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let todoArr = [];
+    let operationToPerform;
+    let item;
+    do {
+      operationToPerform = prompt("Please select an option:\n 1.To-do List 2. Insert an Item 3. Delete an Item 4. Exit");
+      switch (parseInt(operationToPerform)) {
+        case 1:
+          todoArr.forEach(function (value, index) {
+            console.log(`Number ${index+1} : ${value}`);
+          });
+          break;
+        case 2:
+          item = prompt("Enter item");
+          todoArr.push(item);;
+          break;
+        case 3:
+          item = prompt("Enter item number");
+          todoArr.forEach(function (value, index) {
+            if (index == item-1) {
+              todoArr.splice(index, 2);
+            }
+          });
+          break;
+        case 4:
+          break;
+        default:
+          alert("Please enter a valid option");
+      }
+    } while (operationToPerform != 4);
+  </script>
+</body>
+
+</html>
